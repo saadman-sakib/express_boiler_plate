@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="max-width: 800px;">
+    <br>
+    <h3>
+        My Todo App
+    </h3>
+    <br>
+    <div class="card_holder">
+        <form method="POST" action="/create_task">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">New Task</span>
+                    <div class="row">
+                        <div class="input-field">
+                            <input name="title" id="title" type="text" class="validate">
+                            <label for="title">title</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input name="description" id="description" type="text" class="validate">
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input name="date" id="date" type="text" class="validate">
+                            <label for="date">Date</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button type="submit" class="waves-effect waves-light btn">Add Task</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <h5>
+            Tasks
+        </h5>
+        {% for task in tasks %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ task.title }}</span>
+                <p>{{ task.description }} </p>
+                <br>
+                <span class="badge">{{ task.date }}</span>
+            </div>
+            <div class="card-action">
+                <a class="waves-effect waves-light btn orange" href="#">Delete</a>
+                <a class="waves-effect waves-light btn cyan" href="#">Edit</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+<script>
+
+</script>
+{% endblock %}

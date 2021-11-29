@@ -1,0 +1,8 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.centering{
+    display: grid;
+    place-items: center;
+}
