@@ -29,6 +29,8 @@ const Task = sequelize.define("task", {
 Task.sync({ force: false });
 // console.log("The table for the User model was just (re)created!");
 
+//static files
+app.use(express.static('public'));
 
 
 
